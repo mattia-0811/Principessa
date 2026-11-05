@@ -31,4 +31,12 @@ public class Cavaliere {
     public ArrayList<Drago> getDraghiUccisi() {
         return draghiUccisi;
     }
+
+    @Override
+    public void run(){
+        for(int i=0; i<10 &&())
+
+    }
+
+
 }
