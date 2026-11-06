@@ -1,42 +1,24 @@
 import java.util.ArrayList;
-
-public class Cavaliere {
-
+public class Cavaliere implements Runnable{
     private String nome;
     private Cavaliere maestro;
-    private ArrayList<Drago> draghiUccisi;
-
-    public Cavaliere(String nome) {
+    private Thread dragoDaUccidere;
+    public Cavaliere(String nome, Thread dragoDaUccidere) {
         this.nome = nome;
-        this.maestro = null;
-        this.draghiUccisi = new ArrayList<Drago>();
+        this.dragoDaUccidere = dragoDaUccidere;
     }
-
-    public void AggiungiDragoUcciso(Drago d) {
-        this.draghiUccisi.add(d);
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Cavaliere getMaestro() {
-        return maestro;
-    }
-
-    public void setMaestro(Cavaliere maestro) {
-        this.maestro = maestro;
-    }
-
-    public ArrayList<Drago> getDraghiUccisi() {
-        return draghiUccisi;
-    }
-
     @Override
-    public void run(){
-        for(int i=0; i<10 &&())
+    public void run() {
+        for(int i=0; i<10  && (!dragoDaUccidere.isInterrupted()); i++){
+            try {
+                Thread.sleep(5);
+                System.out.println(nome+ " sta cercando di colpire il drago "+(1+i));
+                dragoDaUccidere.interrupt(); //lancio freccia
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
-
 
 }
