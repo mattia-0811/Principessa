@@ -1,7 +1,7 @@
-public class Principessa {
+public class Principessa1{
     private String nome;
     private Drago carceriere;
-    public Principessa(String nome) {
+    public Principessa1(String nome) {
         this.nome = nome;
     }
     public Drago getCarceriere() {

@@ -1,5 +1,5 @@
-public class D_LanciaRoccie extends Drago implements Runnable{
-    public D_LanciaSassi(String nome) {
+public class D_LanciaRocce extends Drago implements Runnable{
+    public D_LanciaRocce(String nome) {
         super(nome);
     }
     @Override
